@@ -94,7 +94,7 @@ export default {
          * 移除 菜单
          */
         menuMouseLeave:function(){
-            this.$emit("menuMouseLeave",false);
+            // this.$emit("menuMouseLeave",false);
         },
         /**
          * 菜单 点击

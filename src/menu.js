@@ -7,25 +7,18 @@
 export default [
     {
       id: "1",
-      name: "SRM平台",
-      platformName:'srm',
-      platformHttps:"http://139.224.2.42:10000/pp/main.html",
       children: [
         {
-            id:"1-1",    // 节点 ID
-            name: "供应商管",  // 菜单名称  
-            platformName:'srm',  // 平台名称   唯一
-            platformHttps:"http://139.224.2.42:10000/pp/main.html",  // 平台地址
-            pathURL:"#AtpApp.custom_pp.supplierInfo.supplier.controller.Supplier",  // 页面路由地址
-            icon:"ios-analytics",   // icon 图标  可参考 https://www.iviewui.com/components/icon             
+            id:"1-1",    
+            name: "供应商管", 
+            path:"/page1",
+            icon:"ios-analytics",             
         },
         {
             id:"1-2",
             name: "采购项目管理",
-            platformName:'srm',
-            platformHttps:"http://139.224.2.42:10000/pp/main.html",
-            pathURL:"#AtpApp.custom_pp.project.purchaseproject.controller.Project",
-            icon:"logo-buffer",   
+            path:"/page2",
+            icon:"ios-analytics",  
         },
       ]
     },

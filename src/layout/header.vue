@@ -10,7 +10,7 @@
             <Avatar style="margin-right:18px;" :src="user" />
 
 
-            <Dropdown
+            <!-- <Dropdown
                 placement="bottom-end"
                 transfer
                 @on-click="menuClick"
@@ -46,7 +46,7 @@
                         <span>退出登录</span>
                     </DropdownItem>
                 </DropdownMenu>
-            </Dropdown>
+            </Dropdown> -->
         </div>
     </header>
 </template>

@@ -38,7 +38,7 @@
                     @menuMouseLeave="menuMouseLeave"
                   />
 
-                  <img 
+                  <!-- <img 
                     :style="
                       showMenu ?
                       {left:'-38px'}
@@ -49,7 +49,7 @@
                     :src="menuLogo" 
                     title="展开菜单" 
                     @mouseover="menuMouseOver"
-                  />
+                  /> -->
 
                 </Sider>
                 <Layout class="wis-content-container" 
@@ -64,7 +64,7 @@
                         @goHome="goHome"
                       />
                     </div>
-                    <Content 
+                    <!-- <Content 
                       v-show="showPlatform"
                       :style="{overflow:'auto',height:documentHeight+'px',padding: '8px 8px', minHeight: '280px', background: '#fff'}"
                     >
@@ -79,9 +79,9 @@
                           >
                           </iframe>
                       </div>
-                    </Content>
+                    </Content> -->
                     <Content 
-                      v-show="!showPlatform"
+                      
                       :style="{overflow:'auto',height:documentHeight+'px',padding: '8px 8px', minHeight: '280px', background: '#fff'}"
                     >
                       <keep-alive>
@@ -113,7 +113,7 @@ export default {
   },
   data(_this) {
     return {
-      showMenu:false,  // 显示菜单
+      showMenu:true,  // 显示菜单
       menuLogo: require("@assets/images/open_menu.svg"), // logo
       commonMenuList:[],   // 常用菜单 List
 
@@ -221,17 +221,18 @@ export default {
      * add 菜单
      */
     addMenuHandle: function(option){
-      let that=this;
-      this.$store.dispatch("addTabs",{
-        _this:that,
-        label:option["name"],
-        name:option["pathURL"],
-        icon:option["icon"],
-        menuObj:option
-      });
+      this.$router.push({path:option["path"]});
+      // let that=this;
+      // this.$store.dispatch("addTabs",{
+      //   _this:that,
+      //   label:option["name"],
+      //   name:option["pathURL"],
+      //   icon:option["icon"],
+      //   menuObj:option
+      // });
 
-      this.commonMenu(option);
-      this.platformLink(option);
+      // this.commonMenu(option);
+      // this.platformLink(option);
     },
     /**
      * 常用菜单 初始化
@@ -344,7 +345,7 @@ export default {
   }
 
   .wis-header-bar{
-    background: #13227a;
+    background: #515a6e;
   }
 
   .wis-content-container{
