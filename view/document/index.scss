@@ -1,4 +1,34 @@
 .document-page-html{
+    padding: 30px 50px;
+    padding-right: 26%;
 
+    h1{
+        padding: 20px 0px;
+    }
 
+    h2{
+        padding: 16px 36px; 
+        font-size: 18px;
+        margin-top: 26px;
+
+    }
+
+    h3{
+        padding: 3px 60px;
+        text-indent: 26px;
+        font-size: 14px;
+        text-align: justify;
+        line-height: 1.7em;
+        font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #515a6e;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 500;
+    }
+
+    .content{
+        padding: 3px 60px;
+
+    }
 }

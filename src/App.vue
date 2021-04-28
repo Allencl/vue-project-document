@@ -20,9 +20,15 @@
                     showMenu?
                     {
                       background: '#fff',
+                      height:documentHeight2+'px',
+                      overflowY: 'auto',
+                      overflowX: 'hidden',
                     }
                     :
                     {
+                      height:documentHeight2+'px',
+                      overflowY: 'auto',
+                      overflowX: 'hidden',
                       background: '#fff',
                       flex:'0 !important',
                       maxWidth:'0 !important',
@@ -120,6 +126,7 @@ export default {
       showPlatform:'',  // 显示的 platform
       menuList:[],  // 菜单
       isRefresh:true,  // 刷新
+      documentHeight2:document.documentElement.clientHeight-(66),  // 窗口高度
       documentHeight:document.documentElement.clientHeight-(_this.tabsArray?116:68),  // 窗口高度
     }
   },
