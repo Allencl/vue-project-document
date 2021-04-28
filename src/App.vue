@@ -70,7 +70,7 @@
                         @goHome="goHome"
                       />
                     </div>
-                    <!-- <Content 
+                    <Content 
                       v-show="showPlatform"
                       :style="{overflow:'auto',height:documentHeight+'px',padding: '8px 8px', minHeight: '280px', background: '#fff'}"
                     >
@@ -85,7 +85,7 @@
                           >
                           </iframe>
                       </div>
-                    </Content> -->
+                    </Content>
                     <Content 
                       
                       :style="{overflow:'auto',height:documentHeight+'px',padding: '8px 8px', minHeight: '280px', background: '#fff'}"
@@ -119,6 +119,8 @@ export default {
   },
   data(_this) {
     return {
+      showTabs:false,  // show tabs
+
       showMenu:true,  // 显示菜单
       menuLogo: require("@assets/images/open_menu.svg"), // logo
       commonMenuList:[],   // 常用菜单 List
@@ -140,6 +142,26 @@ export default {
     "$store.state.storeTabs.tbasList"(val){
       this.updataWindow();
     },
+    // 监听路由
+    '$route': {
+      handler: function(val, oldVal){
+
+        if(val["path"]=='/page1'){
+          this.$store.dispatch("addTabs",{
+            _this:this,
+            label:"示例页面",
+            name:"/page1",
+            icon:"ios-analytics",
+            // menuObj:option
+          });
+        }else{
+          this.$store.dispatch("removeTabsAll");
+        }
+      },
+      deep: true
+    }
+
+
   },   
   created(){
     var that=this;
