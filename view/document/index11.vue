@@ -13,7 +13,10 @@
         <h3>4、自适应页面高度，当页面高度超过时，内容模块内部出现滚条。系统整体布局不发生改变。</h3>
         <h3>5、系统内部tabs标签数最多7个，超过提示数量已达上限。</h3>
     
-    
+        <div class="content">
+            <Button type="primary" style="margin-bottom:20px" @click="click">查看示例页面</Button>
+            <img style="width:100%;" :src="list" alt="查询页面">
+        </div>    
     
     
     </div>
@@ -25,13 +28,17 @@
     export default {
         data () {
             return {
+                list: require('@assets/images/layout.png'), 
+
             }
         },
         created(){
             // console.log("刷新了111");
         },
         methods:{
-
+            click:function(){
+                this.$router.push({path:'/page1'});
+            }
         }
     }
 </script>
