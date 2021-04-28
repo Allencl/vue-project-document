@@ -9,7 +9,7 @@
         <div class="search-table">
             <Table 
                 :columns="columns" 
-                :data="data"
+                :data="data1"
                 stripe
             >
             </Table>            
@@ -76,6 +76,10 @@
             columns:{
                 type:Object,
                 default:()=>{}
+            },
+            data1:{
+                type:Array,
+                default:()=>[]              
             }
         }
     }

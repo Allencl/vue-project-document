@@ -100,19 +100,19 @@ export default {
     {
       name: 'documentMessage',
       path: '/document/message',
-      meta:{title:'文件预览',keepAlive:true},
-      component: ()=> import("@view/document/index16.vue")
+      meta:{title:'提示',keepAlive:true},
+      component: ()=> import("@view/document/index17.vue")
     }, 
     {
       name: 'documentErrorPage',
       path: '/document/errorPage',
       meta:{title:'404页面',keepAlive:true},
-      component: ()=> import("@view/document/index17.vue")
+      component: ()=> import("@view/document/index16.vue")
     }, 
     {
       name: 'documentLoading',
       path: '/document/loading',
-      meta:{title:'提示',keepAlive:true},
+      meta:{title:'loading',keepAlive:true},
       component: ()=> import("@view/document/index18.vue")
     }, 
     

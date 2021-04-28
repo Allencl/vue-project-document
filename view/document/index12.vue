@@ -16,7 +16,13 @@
         <h3>8、移入行时，改变行背景色。</h3>
         <h3>9、带有数据操作的Table，第一列加入Checkbox框。</h3>
 
-
+        <div class="content">
+            <wisTable
+                :data1="data"
+                :columns="columns"
+            >    
+            </wisTable>        
+        </div>
 
     
     
@@ -31,6 +37,61 @@
     export default {
         data () {
             return {
+                columns: [
+                    {
+                        type: 'selection',
+                        width: 60,
+                        align: 'center'
+                    },
+                    {
+                        title: '地址',
+                        key: 'name'
+                    },
+                    {
+                        title: '金额',
+                        key: 'num',
+                        align:"right"
+                    },
+                    {
+                        title: '网站',
+                        key: 'http',
+                        render: (h, params) => {
+                            return h('a', 'www.baidu.com');
+                        }
+                    },
+                    {
+                        title: '操作',
+                        key: 'active',
+                        render: (h, params) => {
+                            return h('div', [
+                                h('Button', {
+                                    props: {
+                                        type:"error",
+                                        size:"small"
+                                    },
+                                },'删除'),
+                            ]);
+                        }
+                    }
+                ],   
+                
+                data:[
+                    {
+                        name:"上海市普陀区云岭东路235号上海跨国采购中心3号楼13A层",
+                        num:'200,878',
+                        http:"www.baidu.com"
+                    },
+                    {
+                        name:"北京市",
+                        num:'911,267',
+                        http:"www.baidu.com"
+                    },
+                    {
+                        name:"南京市",
+                        num:'820,922',
+                        http:"www.baidu.com"
+                    }
+                ]
             }
         },
         created(){

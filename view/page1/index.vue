@@ -2,6 +2,7 @@
     <div>
         <wisTable
             :columns="columns"
+            :data1="data"
         >
             <template v-slot:search-container>
                 <SearchPage 
@@ -38,25 +39,61 @@ export default {
         return {
             showPage:false,  // 显示编辑页面
 
-            columns: [
-                {
-                    type: 'selection',
-                    width: 60,
-                    align: 'center'
-                },
-                {
-                    title: 'Name',
-                    key: 'name'
-                },
-                {
-                    title: 'Age',
-                    key: 'age'
-                },
-                {
-                    title: 'Address',
-                    key: 'address'
-                }
-            ],            
+                columns: [
+                    {
+                        type: 'selection',
+                        width: 60,
+                        align: 'center'
+                    },
+                    {
+                        title: '地址',
+                        key: 'name'
+                    },
+                    {
+                        title: '金额',
+                        key: 'num',
+                        align:"right"
+                    },
+                    {
+                        title: '网站',
+                        key: 'http',
+                        render: (h, params) => {
+                            return h('a', 'www.baidu.com');
+                        }
+                    },
+                    {
+                        title: '操作',
+                        key: 'active',
+                        render: (h, params) => {
+                            return h('div', [
+                                h('Button', {
+                                    props: {
+                                        type:"error",
+                                        size:"small"
+                                    },
+                                },'删除'),
+                            ]);
+                        }
+                    }
+                ],   
+                
+                data:[
+                    {
+                        name:"上海市普陀区云岭东路235号上海跨国采购中心3号楼13A层",
+                        num:'200,878',
+                        http:"www.baidu.com"
+                    },
+                    {
+                        name:"北京市",
+                        num:'911,267',
+                        http:"www.baidu.com"
+                    },
+                    {
+                        name:"南京市",
+                        num:'820,922',
+                        http:"www.baidu.com"
+                    }
+                ]         
         }
     },
     created(){
