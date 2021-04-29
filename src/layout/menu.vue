@@ -134,6 +134,16 @@ export default {
          */
         menuSelect:function(name){
             this.$router.push({path:name});
+
+
+            // 滚动条
+            if(document.querySelector("#content1")){
+                
+                setTimeout(()=>{
+                document.querySelector("#content1").scrollTop =0;
+                },100);        
+            }
+
         },
         /**
          * 移除 菜单

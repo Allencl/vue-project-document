@@ -87,7 +87,7 @@
                       </div>
                     </Content>
                     <Content 
-                      
+                      id="content1"
                       :style="{overflow:'auto',height:documentHeight+'px',padding: '8px 8px', minHeight: '280px', background: '#fff'}"
                     >
                       <keep-alive>
